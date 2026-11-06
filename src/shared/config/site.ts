@@ -4,7 +4,6 @@ export const siteConfig = {
   name: '박진우',
   nameEn: 'Park Jinwoo',
   role: '13년 차 웹 퍼블리셔 · 프론트엔드 개발자',
-  // TODO: 이력서에 pms***@naver.com 으로 가려져 있어 추정한 주소입니다. 실제 주소인지 확인하세요.
   email: 'pmsmbc@naver.com',
   links: {
     github: 'https://github.com/pmsmbc',
