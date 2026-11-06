@@ -1,0 +1,4 @@
+.list { display: grid; gap: 20px; }
+.group { display: grid; gap: 8px; }
+.title { font-weight: 700; }
+.items { display: flex; flex-wrap: wrap; gap: 6px; }

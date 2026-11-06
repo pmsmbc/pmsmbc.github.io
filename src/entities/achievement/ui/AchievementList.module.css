@@ -1,0 +1,29 @@
+.list {
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border-block: 1px solid var(--line);
+}
+.item {
+  display: grid;
+  grid-template-areas: 'value' 'label' 'detail';
+  align-content: start;
+  padding: 24px 0;
+  background: var(--bg);
+}
+.value {
+  grid-area: value;
+  font-size: clamp(2rem, 1.4rem + 2vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  color: var(--accent);
+}
+.label { grid-area: label; margin-top: 8px; font-weight: 700; }
+.detail { grid-area: detail; margin-top: 2px; font-size: var(--fs-sm); color: var(--muted); }
+
+@media (min-width: 720px) {
+  .list { grid-template-columns: repeat(3, 1fr); }
+  .item { padding: 28px 24px; }
+  .item:first-child { padding-left: 0; }
+}

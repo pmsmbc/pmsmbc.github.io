@@ -1,0 +1,26 @@
+.detail { display: grid; gap: 28px; }
+
+.head { display: grid; gap: 10px; max-width: 46em; }
+.title { font-size: var(--fs-lg); font-weight: 800; letter-spacing: -0.02em; line-height: 1.35; padding-right: 48px; }
+.meta { font-size: var(--fs-sm); color: var(--muted); }
+.summary { color: var(--ink); }
+.roles { display: flex; flex-wrap: wrap; gap: 6px; }
+.links { display: flex; flex-wrap: wrap; gap: 8px 20px; font-weight: 600; }
+.links a { color: var(--accent); text-underline-offset: 3px; }
+.note { font-size: var(--fs-sm); color: var(--muted); }
+
+.shots, .shotsPcOnly { display: grid; gap: 20px; align-items: start; }
+.pcs, .mobiles { display: grid; gap: 16px; }
+
+.pc, .mobile {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+}
+.mobiles { grid-template-columns: repeat(auto-fit, minmax(140px, 220px)); }
+
+@media (min-width: 860px) {
+  .shots { grid-template-columns: 1fr 220px; }
+  .mobiles { grid-template-columns: 1fr; }
+}

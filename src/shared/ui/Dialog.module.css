@@ -1,0 +1,28 @@
+.dialog {
+  width: min(1080px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  color: var(--ink);
+  overscroll-behavior: contain;
+}
+.dialog::backdrop { background: rgb(10 18 20 / 0.6); }
+
+.inner { position: relative; padding: clamp(20px, 4vw, 40px); }
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  cursor: pointer;
+}
+.close:hover { border-color: var(--ink); }

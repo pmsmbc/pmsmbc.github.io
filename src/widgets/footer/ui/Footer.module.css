@@ -1,0 +1,7 @@
+.footer { padding-block: 28px; border-top: 1px solid var(--line); }
+.inner { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; }
+.copy { color: var(--muted); font-size: var(--fs-sm); }
+.links { display: flex; gap: 20px; font-size: var(--fs-sm); font-weight: 600; }
+.links a { text-decoration: none; }
+.links a:hover { color: var(--accent); }
+.inner > :last-child { margin-left: auto; }

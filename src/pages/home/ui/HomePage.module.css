@@ -1,0 +1,14 @@
+.skip {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 100;
+  padding: 10px 16px;
+  background: var(--accent);
+  color: var(--on-accent);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+.skip:focus { top: 12px; }
+.main:focus { outline: none; }
+.main > div:first-child:focus { outline: none; }

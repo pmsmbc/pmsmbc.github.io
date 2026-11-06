@@ -1,0 +1,27 @@
+.grid { display: grid; gap: 56px; }
+.block { display: grid; align-content: start; }
+.heading {
+  margin-bottom: 20px;
+  font-size: var(--fs-base);
+  font-weight: 700;
+  color: var(--muted);
+}
+.heading:not(:first-child) { margin-top: 40px; }
+
+.edu { display: grid; gap: 8px; }
+.eduPeriod { display: inline-block; min-width: 4em; color: var(--muted); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
+
+@media (min-width: 900px) {
+  .grid { grid-template-columns: 7fr 5fr; gap: 64px; }
+}
+
+.others {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  margin-top: 20px;
+  margin-bottom: clamp(56px, 7vw, 88px);
+  color: var(--muted);
+  font-size: var(--fs-sm);
+}
+.others li::before { content: '✓'; margin-right: 8px; color: var(--accent); font-weight: 700; }

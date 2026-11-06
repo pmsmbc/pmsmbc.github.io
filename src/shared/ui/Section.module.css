@@ -1,0 +1,31 @@
+.section {
+  padding-block: clamp(72px, 10vw, 128px);
+  border-top: 1px solid var(--line);
+}
+
+.head {
+  display: grid;
+  gap: 12px;
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+
+.title {
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.lead {
+  max-width: 38em;
+  color: var(--muted);
+  font-size: var(--fs-md);
+}
+
+@media (min-width: 900px) {
+  .head {
+    grid-template-columns: 5fr 7fr;
+    align-items: end;
+    gap: 40px;
+  }
+}

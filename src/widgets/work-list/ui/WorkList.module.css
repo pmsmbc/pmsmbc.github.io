@@ -1,0 +1,25 @@
+.grid { display: grid; gap: 20px; }
+
+.more { display: flex; justify-content: center; margin-top: 32px; }
+.moreButton {
+  min-height: 48px;
+  padding: 0 28px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  font-weight: 600;
+  cursor: pointer;
+}
+.moreButton:hover { border-color: var(--ink); }
+
+.subTitle {
+  margin-top: clamp(56px, 7vw, 88px);
+  margin-bottom: 16px;
+  font-size: var(--fs-base);
+  font-weight: 700;
+  color: var(--muted);
+}
+.list { border-top: 1px solid var(--ink); }
+
+@media (min-width: 600px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .grid { grid-template-columns: repeat(3, 1fr); } }

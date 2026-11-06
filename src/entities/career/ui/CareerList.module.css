@@ -1,0 +1,23 @@
+.list { display: grid; }
+
+.item {
+  display: grid;
+  gap: 4px;
+  padding-block: 18px;
+  border-bottom: 1px solid var(--line);
+}
+.item:first-child { padding-top: 0; }
+
+.period {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.company { font-size: var(--fs-md); font-weight: 700; }
+.role { margin-left: 6px; font-size: var(--fs-sm); font-weight: 500; color: var(--muted); }
+.summary { color: var(--muted); }
+
+@media (min-width: 640px) {
+  .item { grid-template-columns: 11em 1fr; gap: 20px; }
+}

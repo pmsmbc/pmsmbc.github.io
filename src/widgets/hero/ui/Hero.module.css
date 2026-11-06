@@ -1,0 +1,27 @@
+.hero { padding-block: clamp(56px, 9vw, 120px) clamp(72px, 10vw, 128px); }
+
+.grid { display: grid; gap: 48px; align-items: center; }
+
+.intro { color: var(--muted); font-weight: 500; }
+.intro strong { color: var(--ink); font-weight: 700; }
+
+.title {
+  margin-top: 16px;
+  font-size: var(--fs-hero);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+}
+
+.desc {
+  margin-top: 24px;
+  max-width: 32em;
+  color: var(--muted);
+  font-size: var(--fs-md);
+}
+
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+
+@media (min-width: 960px) {
+  .grid { grid-template-columns: 1.15fr 1fr; gap: 56px; }
+}
