@@ -12,10 +12,12 @@ export function ProjectCard({ project }: { project: SideProject }) {
       <div className={s.body}>
         <h3 className={s.title}>{title}</h3>
         <p className={s.summary}>{summary}</p>
-        <p className={s.ai}>
-          <strong className={s.aiLabel}>AI 활용</strong>
-          {aiNote}
-        </p>
+        {aiNote && (
+          <p className={s.ai}>
+            <strong className={s.aiLabel}>AI 활용</strong>
+            {aiNote}
+          </p>
+        )}
         <ul className={s.stack} aria-label="사용 기술">
           {stack.map((t) => (
             <li key={t}><Tag>{t}</Tag></li>

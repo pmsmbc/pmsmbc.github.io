@@ -231,8 +231,6 @@ export const sideProjects: SideProject[] = [
     title: '지금 여기는 (nowyeogi.com)',
     summary: '처음 가는 도시의 숙소, 맛집, 관광 정보를 정리하는 여행 정보 블로그. 한국어·영어·일본어를 지원합니다.',
     stack: ['Astro', 'TypeScript', 'i18n', 'GitHub Actions'],
-    // TODO: 실제로 AI를 어떻게 썼는지에 맞게 고쳐 주세요.
-    aiNote: '메모 파일을 넣으면 글과 반응형 이미지가 만들어지는 작업 흐름을 AI와 함께 자동화했습니다.',
     thumbnail: '/images/projects/nowyeogi.jpg',
     link: 'https://nowyeogi.com',
   },

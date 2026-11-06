@@ -31,7 +31,7 @@ export type SideProject = {
   summary: string
   stack: string[]
   /** 이 프로젝트에서 AI를 어떻게 썼는지 한 줄로 */
-  aiNote: string
+  aiNote?: string
   thumbnail?: string
   link?: string
   repo?: string
