@@ -7,7 +7,7 @@ import { Section } from '@/shared/ui'
 import s from './About.module.css'
 
 const intro =
-  '퍼블리싱 가이드를 먼저 세워 프로젝트의 일관성을 지키고, 개발자와 디자이너가 함께 읽기 쉬운 코드를 씁니다. React와 TypeScript에 FSD 아키텍처를 도입하고, AI 도구로 개발 속도를 높입니다. 웹 표준과 KRDS, 웹 접근성을 지키며 GS인증 1등급까지 품질을 끝까지 책임집니다.'
+  '퍼블리싱 가이드를 먼저 세워 프로젝트의 일관성을 지키고, React·TypeScript 환경에 FSD 아키텍처를 도입해 유지보수하기 쉬운 구조를 만듭니다. 중소벤처24 헬프데스크 고도화 프로젝트에서 기획부터 문서, 프론트엔드, 백엔드까지 혼자 맡아 완수했고, 자사 솔루션의 GS인증 1등급 획득과 조달청 디지털서비스몰 등록을 주도했습니다.'
 
 export function About() {
   const ref = useRef<HTMLDivElement>(null)
