@@ -1,0 +1,12 @@
+.marquee { overflow: hidden; }
+.track { display: flex; width: max-content; animation: marquee var(--duration) linear infinite; }
+.reverse .track { animation-direction: reverse; }
+.marquee:hover .track { animation-play-state: paused; }
+.group { display: flex; flex-shrink: 0; align-items: center; }
+.item { flex-shrink: 0; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.paused .track { animation-play-state: paused; }

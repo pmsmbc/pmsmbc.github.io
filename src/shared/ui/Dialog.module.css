@@ -25,4 +25,10 @@
   background: var(--surface);
   cursor: pointer;
 }
-.close:hover { border-color: var(--ink); }
+.close { transition: border-color 0.3s, transform 0.5s var(--ease-out); }
+.close:hover { border-color: var(--ink); transform: rotate(90deg); }
+
+.dialog[open] { animation: dialog-in 0.45s var(--ease-out); }
+.dialog[open]::backdrop { animation: backdrop-in 0.3s ease; }
+@keyframes dialog-in { from { opacity: 0; transform: translateY(24px) scale(0.98); } }
+@keyframes backdrop-in { from { opacity: 0; } }

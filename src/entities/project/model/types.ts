@@ -12,7 +12,6 @@ export type ProjectLink = {
 /** 회사에서 진행한 실무 작업 */
 export type WorkProject = {
   id: string
-  year?: string
   title: string
   client?: string
   summary: string
@@ -22,6 +21,8 @@ export type WorkProject = {
   images?: ProjectImage[]
   /** 상세 화면에 덧붙이는 짧은 안내 (예: 로그인 후 내부 화면) */
   note?: string
+  /** 큰 카드로 먼저 보여줄 대표작 */
+  featured?: boolean
 }
 
 /** 개인적으로 만든 프로젝트 */

@@ -1,38 +1,25 @@
-.card {
-  display: flex;
-  flex-direction: column;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
+.card { position: relative; display: grid; gap: 24px; }
 
 .thumb {
   aspect-ratio: 16 / 10;
-  display: grid;
-  place-items: center;
-  background-color: var(--accent-soft);
-  background-image: radial-gradient(color-mix(in srgb, var(--accent) 22%, transparent) 1px, transparent 1px);
-  background-size: 14px 14px;
-  border-bottom: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  overflow: hidden;
 }
-.thumb img { width: 100%; height: 100%; object-fit: cover; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 1.1s var(--ease-out); }
+.card:hover .thumb img { transform: scale(1.05); }
 
-.body { display: flex; flex-direction: column; gap: 12px; padding: 22px; flex: 1; }
-.title { font-size: var(--fs-md); font-weight: 700; line-height: 1.4; }
-.summary { color: var(--muted); }
+.body { display: grid; gap: 14px; }
+.title { font-size: clamp(1.5rem, 1.1rem + 1.2vw, 2.25rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.25; }
+.link { text-decoration: none; }
+.link::after { content: ''; position: absolute; inset: 0; }
+.link:focus-visible { outline: none; }
+.card:has(.link:focus-visible) .thumb { outline: 3px solid var(--accent); outline-offset: 4px; }
 
-.ai {
-  padding: 12px 14px;
-  border-left: 3px solid var(--accent);
-  background: var(--bg);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  font-size: var(--fs-sm);
-}
-.aiLabel { display: block; margin-bottom: 2px; color: var(--accent); }
+.summary { color: var(--muted); font-size: var(--fs-md); max-width: 34em; }
 
-.stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+.ai { padding-left: 16px; border-left: 2px solid var(--accent); }
+.aiLabel { display: block; font-size: var(--fs-sm); color: var(--accent); }
 
-.links { display: flex; gap: 16px; font-weight: 600; font-size: var(--fs-sm); }
-.links a { text-underline-offset: 3px; }
-.links a:hover { color: var(--accent); }
+.stack { display: flex; flex-wrap: wrap; gap: 8px; }
+.extra { position: relative; z-index: 1; font-weight: 600; font-size: var(--fs-sm); }

@@ -1,0 +1,52 @@
+.wrap {
+  display: grid;
+  gap: 4px;
+  padding-block: clamp(28px, 4vw, 48px) clamp(52px, 5vw, 64px);
+  border-block: 1px solid var(--line);
+  overflow: hidden;
+}
+.item {
+  display: flex;
+  align-items: center;
+  font-size: clamp(2rem, 1rem + 4vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.item::after {
+  content: '✦';
+  margin-inline: clamp(20px, 3vw, 44px);
+  font-size: 0.4em;
+  color: var(--accent);
+}
+.solid { color: var(--ink); }
+.outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px color-mix(in srgb, var(--ink) 55%, transparent);
+}
+
+.wrap { position: relative; }
+.toggle {
+  position: absolute;
+  right: var(--gutter);
+  bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+.toggle:hover { border-color: var(--ink); }
+/* 글자는 넓은 화면에서만 보이고, 좁은 화면에서는 아이콘만 (이름은 스크린리더가 읽음) */
+@media (max-width: 640px) {
+  .toggle { width: 32px; padding: 0; justify-content: center; }
+  .toggle span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}

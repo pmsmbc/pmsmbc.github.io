@@ -1,9 +1,9 @@
 import type { Achievement } from './types'
 
 export const achievements: Achievement[] = [
-  { id: 'years', value: '13년', label: '웹 퍼블리싱·프론트엔드 경력', detail: '2013년부터 신규 구축과 유지보수' },
-  { id: 'gs', value: '1등급', label: 'GS인증 획득', detail: 'CUBE-i Works v1.0 품질 테스트와 결함 조치 주도, 2026' },
-  { id: 'award', value: '최우수상 2개', label: 'WEB AWARD KOREA 2020', detail: '한양사이버대학교 입학 사이트, 한양사이버대학원 사이트' },
+  { id: 'years', count: 13, unit: '년', label: '웹 퍼블리싱·프론트엔드 경력', detail: '2013년부터 신규 구축과 유지보수' },
+  { id: 'gs', count: 1, unit: '등급', label: 'GS인증 획득', detail: 'CUBE-i Works v1.0 품질 테스트와 결함 조치 주도, 2026' },
+  { id: 'award', count: 2, unit: '개 부문', label: 'WEB AWARD KOREA 2020 최우수상', detail: '한양사이버대학교 입학 사이트, 한양사이버대학원 사이트' },
 ]
 
 export const otherAchievements: string[] = [

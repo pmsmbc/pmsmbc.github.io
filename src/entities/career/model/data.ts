@@ -29,14 +29,14 @@ export const careers: Career[] = [
     period: '2016.06 – 2021.06',
     company: '싸이웍스',
     role: 'UI/UX 팀장',
-    summary: '대학·기관 사이트 신규 구축과 운영 사이트 유지보수, WEB AWARD KOREA 2020 최우수상 2개 부문 수상 프로젝트',
+    summary: '한양사이버대학교, 가천대학교 등 대학 사이트 신규 구축과 운영 사이트 유지보수, WEB AWARD KOREA 2020 최우수상 2개 부문 수상 프로젝트',
   },
   {
     id: 'cnttech',
     period: '2015.10 – 2016.06',
     company: '씨엔티테크',
     role: '디자인팀 퍼블리셔',
-    summary: '운영 사이트 유지보수와 신규 사이트 제작',
+    summary: '굽네치킨 온라인 주문, 디디치킨, 마노핀 등 프랜차이즈 사이트 제작과 유지보수',
   },
   {
     id: 'hanmiit',

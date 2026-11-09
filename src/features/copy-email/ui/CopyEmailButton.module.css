@@ -1,10 +1,11 @@
 .button {
-  min-height: 48px;
-  padding: 0 22px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
+  min-height: 52px;
+  padding: 0 26px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
   background: transparent;
   font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
-.button:hover { border-color: var(--ink); }
+.button:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }

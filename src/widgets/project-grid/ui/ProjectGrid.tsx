@@ -6,12 +6,14 @@ export function ProjectGrid() {
   return (
     <Section
       id="projects"
-      title="개인 프로젝트"
-      lead="업무 밖에서 새로운 도구와 방식을 시험해 본 결과물입니다. 프로젝트마다 AI를 어디에 썼는지 함께 적었습니다."
+      title="Side projects"
+      lead="업무 밖에서 직접 기획하고 만들어 운영하는 사이트입니다."
     >
       <div className={s.grid}>
         {sideProjects.map((p) => (
-          <ProjectCard key={p.id} project={p} />
+          <div key={p.id} data-reveal>
+            <ProjectCard project={p} />
+          </div>
         ))}
       </div>
     </Section>

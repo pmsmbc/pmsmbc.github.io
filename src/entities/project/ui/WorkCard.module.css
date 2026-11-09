@@ -1,30 +1,42 @@
-.card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition: border-color 0.15s;
-}
-.card:hover, .card:focus-within { border-color: var(--ink); }
+.card { position: relative; display: grid; gap: 22px; }
 
 .thumb {
-  aspect-ratio: 16 / 10;
-  background: var(--bg);
-  border-bottom: 1px solid var(--line);
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
   overflow: hidden;
+  isolation: isolate;
 }
 .thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top center;
+  transition: transform 1.1s var(--ease-out);
 }
+.card:hover .thumb img { transform: scale(1.06); }
 
-.body { display: grid; gap: 2px; padding: 16px 18px 18px; }
-.title { font-size: var(--fs-base); font-weight: 700; line-height: 1.45; }
+.badge {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s var(--ease-out);
+}
+.card:hover .badge, .card:focus-within .badge { transform: translate(-50%, -50%) scale(1); }
+
+.body { display: grid; gap: 4px; }
+.title { font-size: clamp(1.375rem, 1rem + 1.2vw, 2rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.25; }
 
 .open {
   padding: 0;
@@ -34,9 +46,9 @@
   text-align: left;
   cursor: pointer;
 }
-/* 카드 전체를 누를 수 있게 */
 .open::after { content: ''; position: absolute; inset: 0; }
 .open:focus-visible { outline: none; }
-.card:has(.open:focus-visible) { outline: 2px solid var(--accent); outline-offset: 3px; }
+.card:has(.open:focus-visible) .thumb { outline: 3px solid var(--accent); outline-offset: 4px; }
 
-.meta, .roles { font-size: var(--fs-sm); color: var(--muted); }
+.roles { font-size: var(--fs-md); color: var(--muted); }
+.meta { font-size: var(--fs-sm); color: var(--muted); }

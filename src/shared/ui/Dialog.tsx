@@ -1,4 +1,5 @@
-import { useEffect, useRef, type ReactNode } from 'react'
+import { useEffect, useRef, type KeyboardEvent, type ReactNode } from 'react'
+import { pauseSmoothScroll, resumeSmoothScroll } from '@/shared/lib'
 import s from './Dialog.module.css'
 
 type Props = {
@@ -18,17 +19,37 @@ export function Dialog({ open, onClose, labelledBy, children }: Props) {
     if (open && !d.open) {
       d.showModal()
       document.documentElement.style.overflow = 'hidden'
+      pauseSmoothScroll()
     }
     if (!open && d.open) d.close()
     return () => {
       document.documentElement.style.overflow = ''
+      resumeSmoothScroll()
     }
   }, [open])
 
+  // 팝업 안에서만 Tab 순환 (마지막 요소 다음 → 첫 요소)
+  const trapTab = (e: KeyboardEvent<HTMLDialogElement>) => {
+    if (e.key !== 'Tab' || !ref.current) return
+    const focusables = ref.current.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
+    if (!focusables.length) return
+    const first = focusables[0]
+    const last = focusables[focusables.length - 1]
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault()
+      last.focus()
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault()
+      first.focus()
+    }
+  }
+
   return (
     <dialog
+      onKeyDown={trapTab}
       ref={ref}
       className={s.dialog}
+      data-lenis-prevent
       aria-labelledby={labelledBy}
       onClose={onClose}
       onClick={(e) => {

@@ -3,16 +3,15 @@ import type { WorkProject } from '../model/types'
 import s from './WorkDetail.module.css'
 
 export function WorkDetail({ project, titleId }: { project: WorkProject; titleId: string }) {
-  const { title, year, client, summary, roles, links, images = [], note } = project
+  const { title, client, summary, roles, links, images = [], note } = project
   const pcs = images.filter((i) => i.device === 'pc')
   const mobiles = images.filter((i) => i.device === 'mobile')
-  const meta = [year, client].filter(Boolean).join(', ')
 
   return (
     <div className={s.detail}>
       <header className={s.head}>
         <h2 id={titleId} className={s.title}>{title}</h2>
-        {meta && <p className={s.meta}>{meta}</p>}
+        {client && <p className={s.meta}>{client}</p>}
         <p className={s.summary}>{summary}</p>
         <ul className={s.roles} aria-label="담당 역할">
           {roles.map((r) => (

@@ -1,0 +1,30 @@
+.wrap { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.inner { position: absolute; inset: -10%; opacity: var(--blob-opacity); }
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  will-change: transform;
+}
+.blob[data-c='1'] { width: 46vw; height: 46vw; left: 2%; top: 8%; background: radial-gradient(circle, var(--blob-1) 0%, transparent 68%); }
+.blob[data-c='2'] { width: 38vw; height: 38vw; left: 34%; top: 38%; background: radial-gradient(circle, var(--blob-2) 0%, transparent 68%); }
+.blob[data-c='3'] { width: 42vw; height: 42vw; right: 0; top: 0; background: radial-gradient(circle, var(--blob-3) 0%, transparent 68%); }
+.blob[data-c='4'] { width: 30vw; height: 30vw; right: 12%; bottom: 0; background: radial-gradient(circle, var(--blob-4) 0%, transparent 68%); }
+
+/* 화면이 너무 매끈해 보이지 않게 아주 옅은 노이즈를 얹음 */
+.grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 720px) {
+  .blob { filter: blur(50px); }
+  .blob[data-c='1'] { width: 90vw; height: 90vw; }
+  .blob[data-c='2'] { width: 70vw; height: 70vw; }
+  .blob[data-c='3'] { width: 80vw; height: 80vw; }
+  .blob[data-c='4'] { width: 60vw; height: 60vw; }
+}

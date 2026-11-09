@@ -1,29 +1,26 @@
-.list {
-  display: grid;
-  gap: 1px;
-  background: var(--line);
-  border-block: 1px solid var(--line);
-}
+.list { display: grid; gap: 40px; }
 .item {
   display: grid;
   grid-template-areas: 'value' 'label' 'detail';
   align-content: start;
-  padding: 24px 0;
-  background: var(--bg);
+  padding-top: 24px;
+  border-top: 1px solid var(--ink);
 }
 .value {
   grid-area: value;
-  font-size: clamp(2rem, 1.4rem + 2vw, 2.75rem);
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: clamp(3.5rem, 2rem + 5vw, 6.5rem);
   font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1.15;
-  color: var(--accent);
+  letter-spacing: -0.06em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
-.label { grid-area: label; margin-top: 8px; font-weight: 700; }
-.detail { grid-area: detail; margin-top: 2px; font-size: var(--fs-sm); color: var(--muted); }
+.unit { font-size: 0.3em; font-weight: 700; letter-spacing: -0.02em; color: var(--accent); }
+.label { grid-area: label; margin-top: 16px; font-weight: 700; font-size: var(--fs-md); }
+.detail { grid-area: detail; margin-top: 4px; font-size: var(--fs-sm); color: var(--muted); }
 
-@media (min-width: 720px) {
-  .list { grid-template-columns: repeat(3, 1fr); }
-  .item { padding: 28px 24px; }
-  .item:first-child { padding-left: 0; }
+@media (min-width: 760px) {
+  .list { grid-template-columns: repeat(3, 1fr); gap: 32px; }
 }

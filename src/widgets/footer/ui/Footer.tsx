@@ -1,4 +1,3 @@
-import { ScrollTopButton } from '@/features/scroll-to-top'
 import { siteConfig } from '@/shared/config'
 import { Container } from '@/shared/ui'
 import s from './Footer.module.css'
@@ -26,7 +25,6 @@ export function Footer() {
               </li>
             ))}
           </ul>
-          <ScrollTopButton />
         </div>
       </Container>
     </footer>

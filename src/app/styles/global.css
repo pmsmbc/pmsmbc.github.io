@@ -1,10 +1,10 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-h) + 16px);
+  scroll-padding-top: var(--header-h);
   -webkit-text-size-adjust: 100%;
 }
+html:not(.lenis) { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -14,14 +14,16 @@ body {
   font-size: var(--fs-base);
   line-height: 1.7;
   word-break: keep-all;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, p, ol, ul, dl, dd { margin: 0; }
+h1, h2, h3, h4, p, ol, ul, dl, dd, figure { margin: 0; }
 ol, ul { padding: 0; list-style: none; }
 a { color: inherit; }
 img { max-width: 100%; display: block; }
 button { font: inherit; color: inherit; }
+::selection { background: var(--accent); color: var(--on-accent); }
 
 :focus-visible {
   outline: 2px solid var(--accent);
@@ -34,7 +36,13 @@ button { font: inherit; color: inherit; }
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
 
+/* Lenis */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: clip; }
+
+/* 동작 줄이기: 저절로 계속 움직이는 반복 애니메이션만 멈춤.
+   마우스를 올렸을 때의 짧은 전환 효과는 사용자가 직접 일으키는 것이라 유지 */
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  *, *::before, *::after { animation: none !important; }
 }

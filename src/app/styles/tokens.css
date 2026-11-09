@@ -1,64 +1,70 @@
 :root {
-  --bg: #f2f4f1;
+  --bg: #f3f3f1;
   --surface: #ffffff;
-  --ink: #18262b;
-  --muted: #55656a;
-  --line: #d3dad5;
-  --accent: #2843e8;
-  --accent-soft: #e4e8fd;
+  --ink: #17171b;
+  --muted: #62626b;
+  --line: #dcdcd8;
+  --accent: #3a56ff;
   --on-accent: #ffffff;
-  --panel: #18262b;
-  --panel-ink: #dfe7e5;
-  --panel-muted: #8a9a9e;
-  --ok: #3fae7a;
+
+  /* 어두운 섹션 (AI 활용, 전체 작업 목록) */
+  --dark: #141417;
+  --dark-ink: #f1f1ee;
+  --dark-muted: #9a9aa3;
+  --dark-line: #2c2c32;
+
+  /* 배경 그라데이션 덩어리 */
+  --blob-1: #8ea2ff;
+  --blob-2: #c4a8ff;
+  --blob-3: #8fead0;
+  --blob-4: #ffc49e;
+  --blob-opacity: 0.75;
 
   --font-sans: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* 1.25 type scale */
   --fs-sm: 0.875rem;
   --fs-base: 1rem;
   --fs-md: 1.125rem;
-  --fs-lg: 1.375rem;
-  --fs-xl: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
-  --fs-hero: clamp(2rem, 1.1rem + 3.4vw, 3.5rem);
+  --fs-lg: 1.5rem;
+  --fs-xl: clamp(1.75rem, 1.1rem + 2.4vw, 3rem);
+  --fs-display: clamp(3rem, 1.2rem + 7.4vw, 8.5rem);
+  --fs-hero: clamp(2.6rem, 1rem + 6.4vw, 7.25rem);
 
-  --radius-sm: 6px;
-  --radius-lg: 14px;
-  --container: 1120px;
-  --gutter: clamp(16px, 4vw, 40px);
-  --header-h: 64px;
+  --radius-sm: 8px;
+  --radius-lg: 20px;
+  --container: 1280px;
+  --gutter: clamp(16px, 4.5vw, 56px);
+  --header-h: 72px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --bg: #10181b;
-    --surface: #172226;
-    --ink: #e6ecea;
-    --muted: #97a6a9;
-    --line: #2a383c;
-    --accent: #8b99ff;
-    --accent-soft: #232c55;
-    --on-accent: #0e1430;
-    --panel: #0b1214;
-    --panel-ink: #dfe7e5;
-    --panel-muted: #7f9094;
+    --bg: #101013;
+    --surface: #18181c;
+    --ink: #ececea;
+    --muted: #9d9da6;
+    --line: #2a2a30;
+    --accent: #8597ff;
+    --on-accent: #0c1030;
+    --dark: #0a0a0c;
+    --dark-line: #232328;
+    --blob-opacity: 0.32;
     color-scheme: dark;
   }
 }
 
 :root[data-theme='dark'] {
-  --bg: #10181b;
-  --surface: #172226;
-  --ink: #e6ecea;
-  --muted: #97a6a9;
-  --line: #2a383c;
-  --accent: #8b99ff;
-  --accent-soft: #232c55;
-  --on-accent: #0e1430;
-  --panel: #0b1214;
-  --panel-ink: #dfe7e5;
-  --panel-muted: #7f9094;
+  --bg: #101013;
+  --surface: #18181c;
+  --ink: #ececea;
+  --muted: #9d9da6;
+  --line: #2a2a30;
+  --accent: #8597ff;
+  --on-accent: #0c1030;
+  --dark: #0a0a0c;
+  --dark-line: #232328;
+  --blob-opacity: 0.32;
   color-scheme: dark;
 }

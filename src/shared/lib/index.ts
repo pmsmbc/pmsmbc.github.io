@@ -1,3 +1,6 @@
 export { cx } from './cx'
 export { usePrefersReducedMotion } from './usePrefersReducedMotion'
 export { useActiveSection } from './useActiveSection'
+export { useScrollProgress } from './useScrollProgress'
+export { gsap, ScrollTrigger, useGSAP, MOTION_OK } from './gsap'
+export { startSmoothScroll, pauseSmoothScroll, resumeSmoothScroll, scrollToTop } from './smoothScroll'

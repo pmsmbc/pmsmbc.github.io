@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react'
 import { ThemeToggle } from '@/features/theme-toggle'
-import { navItems, siteConfig } from '@/shared/config'
-import { cx, useActiveSection } from '@/shared/lib'
+import { navItems } from '@/shared/config'
+import { cx, useActiveSection, useScrollProgress } from '@/shared/lib'
+import { useDarkUnderHeader } from '../model/useDarkUnderHeader'
 import s from './Header.module.css'
 
 const sectionIds = navItems.map((n) => n.id)
 
 export function Header() {
   const active = useActiveSection(sectionIds)
+  const { y, progress } = useScrollProgress()
   const [open, setOpen] = useState(false)
+  const overDark = useDarkUnderHeader()
 
   useEffect(() => {
     if (!open) return
@@ -18,11 +21,13 @@ export function Header() {
   }, [open])
 
   return (
-    <header className={s.header}>
+    <header className={cx(s.header, y > 40 && s.scrolled, overDark && !open && s.overDark, open && s.menuOpen)}>
       <div className={s.inner}>
-        <a href="#top" className={s.logo}>{siteConfig.name}</a>
+        <a href="#top" className={s.logo}>
+          Jinwoo<span className={s.logoDot}>.</span>
+        </a>
 
-        <nav aria-label="주요 메뉴" className={cx(s.nav, open && s.navOpen)} id="site-nav">
+        <nav aria-label="주요 메뉴" className={s.nav} id="site-nav">
           <ul className={s.menu}>
             {navItems.map((item) => (
               <li key={item.id}>
@@ -46,12 +51,14 @@ export function Header() {
             className={s.menuButton}
             aria-expanded={open}
             aria-controls="site-nav"
+            aria-label={open ? '메뉴 닫기' : '메뉴 열기'}
             onClick={() => setOpen((v) => !v)}
           >
-            {open ? '닫기' : '메뉴'}
+            <span /><span />
           </button>
         </div>
       </div>
+      <span className={s.progress} style={{ transform: `scaleX(${progress})` }} aria-hidden="true" />
     </header>
   )
 }

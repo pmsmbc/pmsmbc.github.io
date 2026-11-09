@@ -8,4 +8,7 @@
   background: transparent;
   cursor: pointer;
 }
+.button { transition: border-color 0.3s, transform 0.5s var(--ease-out); }
+.button svg { transition: transform 0.6s var(--ease-out); }
 .button:hover { border-color: var(--ink); }
+.button:hover svg { transform: rotate(-25deg) scale(1.1); }

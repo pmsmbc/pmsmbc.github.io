@@ -1,6 +1,6 @@
 export type { WorkProject, SideProject, ProjectImage, ProjectLink } from './model/types'
-export { workProjects, otherWorkProjects, sideProjects } from './model/data'
-export { WorkRow } from './ui/WorkRow'
+export { workProjects, sideProjects } from './model/data'
 export { WorkCard } from './ui/WorkCard'
+export { WorkListRow } from './ui/WorkListRow'
 export { WorkDetail } from './ui/WorkDetail'
 export { ProjectCard } from './ui/ProjectCard'
